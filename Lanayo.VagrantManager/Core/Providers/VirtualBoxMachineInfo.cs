@@ -23,11 +23,11 @@ namespace Lanayo.Vagrant_Manager.Core.Providers {
                 string name = infoLine.Substring(0, infoLine.IndexOf('='));
                 string value = infoLine.Substring(infoLine.IndexOf('=')+1, infoLine.Length - infoLine.IndexOf('=')-1);
 
-                if (name.Substring(0, 1) == "\"") {
+                if (name.Length >= 2 && name.Substring(0, 1) == "\"") {
                     name = name.Substring(1, name.Length - 2);
                 }
 
-                if (value.Substring(0, 1) == "\"") {
+                if (value.Length >= 2 && value.Substring(0, 1) == "\"") {
                     value = value.Substring(1, value.Length - 2);
                 }
 
